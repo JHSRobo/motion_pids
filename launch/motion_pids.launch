@@ -3,9 +3,9 @@
   <!-- lateral motion -->
 
   <node name="controller" pkg="pid" type="controller" output="screen" ns="lat_motion">
-     <param name="Kp" value="10.0" />
-     <param name="Ki" value="0.5" />
-     <param name="Kd" value="6.0" />
+     <param name="Kp" value="0.0" />
+     <param name="Ki" value="0.0" />
+     <param name="Kd" value="0.0" />
      <param name="upper_limit" value="0.5" />
      <param name="lower_limit" value="0.5" />
      <param name="windup_limit" value="0.5" />
@@ -18,9 +18,9 @@
   <!-- longitudinal motion -->
 
   <node name="controller" pkg="pid" type="controller" output="screen" ns="long_motion">
-     <param name="Kp" value="10.0" />
-     <param name="Ki" value="0.5" />
-     <param name="Kd" value="6.0" />
+     <param name="Kp" value="0.0" />
+     <param name="Ki" value="0.0" />
+     <param name="Kd" value="0.0" />
      <param name="upper_limit" value="0.5" />
      <param name="lower_limit" value="0.5" />
      <param name="windup_limit" value="0.5" />
@@ -33,9 +33,9 @@
   <!-- vertical motion -->
 
   <node name="controller" pkg="pid" type="controller" output="screen" ns="vert_motion">
-     <param name="Kp" value="10.0" />
-     <param name="Ki" value="0.5" />
-     <param name="Kd" value="6.0" />
+     <param name="Kp" value="0.0" />
+     <param name="Ki" value="0.0" />
+     <param name="Kd" value="0.0" />
      <param name="upper_limit" value="0.5" />
      <param name="lower_limit" value="0.5" />
      <param name="windup_limit" value="0.5" />
@@ -48,9 +48,9 @@
   <!-- roll motion -->
 
   <node name="controller" pkg="pid" type="controller" output="screen" ns="roll_motion">
-     <param name="Kp" value="10.0" />
-     <param name="Ki" value="0.5" />
-     <param name="Kd" value="6.0" />
+     <param name="Kp" value="0.0" />
+     <param name="Ki" value="0.0" />
+     <param name="Kd" value="0.0" />
      <param name="upper_limit" value="0.5" />
      <param name="lower_limit" value="0.5" />
      <param name="windup_limit" value="0.5" />
@@ -63,9 +63,9 @@
   <!-- yaw motion -->
 
   <node name="controller" pkg="pid" type="controller" output="screen" ns="yaw_motion">
-     <param name="Kp" value="10.0" />
-     <param name="Ki" value="0.5" />
-     <param name="Kd" value="6.0" />
+     <param name="Kp" value="0.0" />
+     <param name="Ki" value="0.0" />
+     <param name="Kd" value="0.0" />
      <param name="upper_limit" value="0.5" />
      <param name="lower_limit" value="0.5" />
      <param name="windup_limit" value="0.5" />
