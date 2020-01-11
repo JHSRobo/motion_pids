@@ -79,4 +79,12 @@
 
   <node name="motion_pids_eff_pub" pkg="motion_pids" type="effort_pub" output="screen"/>
 
+  <!-- start pids off by default -->
+
+  <node pkg="rostopic" type="rostopic" name="roll_off_default" args="pub -1 /roll_motion/pid_enable std_msgs/Bool 'data: false'" output="screen"/>
+  <node pkg="rostopic" type="rostopic" name="yaw_off_default" args="pub -1 /yaw_motion/pid_enable std_msgs/Bool 'data: false'" output="screen"/>
+  <node pkg="rostopic" type="rostopic" name="lat_off_default" args="pub -1 /lat_motion/pid_enable std_msgs/Bool 'data: false'" output="screen"/>
+  <node pkg="rostopic" type="rostopic" name="long_off_default" args="pub -1 /long_motion/pid_enable std_msgs/Bool 'data: false'" output="screen"/>
+  <node pkg="rostopic" type="rostopic" name="vert_off_default" args="pub -1 /vert_motion/pid_enable std_msgs/Bool 'data: false'" output="screen"/>
+
 </launch>
