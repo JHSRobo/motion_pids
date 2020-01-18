@@ -137,16 +137,16 @@ void cmdCallback(const geometry_msgs::Twist::ConstPtr& data) {
     roll_ctrl = data->angular.y;
   }
   if (!yaw_enable) {
-    roll_ctrl = data->angular.x;
+    yaw_ctrl = data->angular.x;
   }
   if (!lat_enable) {
-    roll_ctrl = data->linear.x;
+    lat_ctrl = data->linear.x;
   }
   if (!long_enable) {
-    roll_ctrl = data->linear.y;
+    long_ctrl = data->linear.y;
   }
   if (!vert_enable) {
-    roll_ctrl = data->linear.z;
+    vert_ctrl = data->linear.z;
   }
   if (!(roll_enable && yaw_enable && lat_enable && long_enable && vert_enable)){
     // publish the vector values -> build up command vector message
@@ -176,6 +176,7 @@ int main(int argc, char **argv)
     lat_sub = n.subscribe<std_msgs::Float64>("lat_motion/control_effort", 1, &latCallback);
     long_sub = n.subscribe<std_msgs::Float64>("long_motion/control_effort", 1, &longCallback);
     vert_sub = n.subscribe<std_msgs::Float64>("vert_motion/control_effort", 1, &vertCallback);
+    cmd_vel_sub = n.subscribe<geometry_msgs::Twist>("rov/cmd_vel", 1, &cmdCallback);
 
     vel_pub = n.advertise<geometry_msgs::Twist>("rov/eff_vel", 1);
 
