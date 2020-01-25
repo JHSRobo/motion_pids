@@ -13,7 +13,7 @@
      <param name="min_loop_frequency" value="100.0" />
   </node>
   <node name="pub_lat_setpoint" pkg="topic_tools" type="transform" args="/rov/cmd_vel /lat_motion/setpoint std_msgs/Float64 'm.linear.x'" />
-  <node name="pub_lat_vel" pkg="topic_tools" type="transform" args="/odometry/filtered /lat_motion/state std_msgs/Float64 'm.twist.twist.linear.x'" />
+  <node name="pub_lat_vel" pkg="topic_tools" type="transform" respawn="true" args="/t265/odom/sample /lat_motion/state std_msgs/Float64 'm.twist.twist.linear.y'" />
 
   <!-- longitudinal motion -->
 
@@ -28,7 +28,7 @@
      <param name="min_loop_frequency" value="100.0" />
   </node>
   <node name="pub_long_setpoint" pkg="topic_tools" type="transform" args="/rov/cmd_vel /long_motion/setpoint std_msgs/Float64 'm.linear.y'" />
-  <node name="pub_long_vel" pkg="topic_tools" type="transform" args="/odometry/filtered /long_motion/state std_msgs/Float64 'm.twist.twist.linear.y'" />
+  <node name="pub_long_vel" pkg="topic_tools" type="transform" respawn="true" args="/t265/odom/sample /long_motion/state std_msgs/Float64 'm.twist.twist.linear.x * -1'" />
 
   <!-- vertical motion -->
 
@@ -43,7 +43,7 @@
      <param name="min_loop_frequency" value="100.0" />
   </node>
   <node name="pub_vert_setpoint" pkg="topic_tools" type="transform" args="/rov/cmd_vel /vert_motion/setpoint std_msgs/Float64 'm.linear.z'" />
-  <node name="pub_vert_vel" pkg="topic_tools" type="transform" args="/odometry/filtered /vert_motion/state std_msgs/Float64 'm.twist.twist.linear.z'" />
+  <node name="pub_vert_vel" pkg="topic_tools" type="transform" respawn="true" args="/rov/depth_odom /vert_motion/state std_msgs/Float64 'm.twist.twist.linear.z'" />
 
   <!-- roll motion -->
 
@@ -58,7 +58,7 @@
      <param name="min_loop_frequency" value="100.0" />
   </node>
   <node name="pub_roll_setpoint" pkg="topic_tools" type="transform" args="/rov/cmd_vel /roll_motion/setpoint std_msgs/Float64 'm.angular.y'" />
-  <node name="pub_roll_vel" pkg="topic_tools" type="transform" args="/odometry/filtered /roll_motion/state std_msgs/Float64 'm.twist.twist.angular.y'" />
+  <node name="pub_roll_vel" pkg="topic_tools" type="transform" respawn="true" args="/t265/odom/sample /roll_motion/state std_msgs/Float64 'm.twist.twist.angular.y'" />
 
   <!-- yaw motion -->
 
@@ -73,7 +73,7 @@
      <param name="min_loop_frequency" value="100.0" />
   </node>
   <node name="pub_yaw_setpoint" pkg="topic_tools" type="transform" args="/rov/cmd_vel /yaw_motion/setpoint std_msgs/Float64 'm.angular.x'" />
-  <node name="pub_yaw_vel" pkg="topic_tools" type="transform" args="/odometry/filtered /yaw_motion/state std_msgs/Float64 'm.twist.twist.angular.x'" />
+  <node name="pub_yaw_vel" pkg="topic_tools" type="transform" respawn="true" args="/t265/odom/sample /yaw_motion/state std_msgs/Float64 'm.twist.twist.angular.x'" />
 
   <!-- combined publisher -->
 
